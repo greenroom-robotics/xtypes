@@ -4,7 +4,7 @@
   schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>xtypes</name>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
   <description>Implementation based on DDS-XTYPES standard (https://www.omg.org/spec/DDS-XTypes)</description>
   <maintainer email="russ.webber@greenroomrobotics.com">Russ Webber</maintainer>
   <license>Apache2.0</license>
