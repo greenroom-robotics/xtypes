@@ -1,0 +1,29 @@
+[workspace]
+channels = [
+    "http://localhost:8000",
+    "https://prefix.dev/pixi-build-backends",
+    "https://prefix.dev/conda-forge",
+]
+platforms = ["linux-64", "linux-aarch64"]
+preview = ["pixi-build"]
+
+[dependencies]
+xtypes = { path = "." }
+
+[package]
+name = "xtypes"
+version = "1.1.2"
+license = "Apache-2.0"
+
+[package.build.backend]
+name = "pixi-build-cmake"
+version = "*"
+
+[package.host-dependencies]
+# Header-only INTERFACE library; CMakeLists only does find_package(Threads).
+# Threads comes from the system libc/pthreads provided by the compiler sysroot,
+# so no additional host deps are required.
+
+[package.run-dependencies]
+# Header-only library: consumers get headers + a Threads::Threads link
+# requirement, satisfied by the system pthread library at consumer build time.
