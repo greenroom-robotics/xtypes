@@ -9,6 +9,7 @@ preview = ["pixi-build"]
 
 [dependencies]
 xtypes = { path = "." }
+mise = "*"
 
 [package]
 name = "xtypes"
