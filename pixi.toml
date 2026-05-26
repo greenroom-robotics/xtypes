@@ -1,6 +1,6 @@
 [workspace]
 channels = [
-    "http://localhost:8000",
+    "http://localhost:8000/general",
     "https://prefix.dev/pixi-build-backends",
     "https://prefix.dev/conda-forge",
 ]
