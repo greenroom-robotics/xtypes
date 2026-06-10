@@ -1,33 +1,24 @@
-name: Tag & Release (pixi)
+name: Test (pixi)
 on:
   workflow_dispatch:
-    inputs:
-      package:
-        type: choice
-        description: 'If not specified, all packages will be released.'
-        options:
-          - ""
-      changelog:
-        type: boolean
-        default: true
-        description: Generate and commit CHANGELOG.md
+  pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   id-token: write
 
 jobs:
-  release:
+  test:
     runs-on: 2vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: greenroom-robotics/mise/.github/actions/release@v4
+      - uses: greenroom-robotics/mise/.github/actions/test@v4
         with:
-          package: ${{ inputs.package }}
-          changelog: ${{ inputs.changelog }}
           package-dir: .
           gh-app-id: ${{ secrets.GH_APP_ID }}
           gh-app-private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
