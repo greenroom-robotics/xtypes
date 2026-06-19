@@ -6,7 +6,7 @@ on:
         type: choice
         description: 'If not specified, all packages will be released.'
         options:
-          - ""
+          - xtypes
       changelog:
         type: boolean
         default: true
