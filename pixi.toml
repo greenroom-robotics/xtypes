@@ -1,6 +1,7 @@
 [workspace]
 channels = [
   "http://localhost:12222/general",
+  "https://prefix.dev/robostack-kilted",
   "https://prefix.dev/pixi-build-backends",
   "https://prefix.dev/conda-forge",
 ]
@@ -8,16 +9,17 @@ platforms = ["linux-64", "linux-aarch64"]
 preview = ["pixi-build"]
 
 [dependencies]
+ros-kilted-desktop = "*"
 xtypes = { path = "." }
-mise   = "*"
+mise = "*"
 
 [package]
-name    = "xtypes"
+name = "xtypes"
 version = "1.1.2"
 license = "Apache-2.0"
 
 [package.build.backend]
-name    = "pixi-build-cmake"
+name = "pixi-build-cmake"
 version = "*"
 
 # Test env builds the library with tests enabled and runs ctest.
@@ -26,9 +28,9 @@ version = "*"
 # by ROS packages. Tests are gated behind XTYPES_BUILD_TESTS and link GTest.
 [feature.tests.dependencies]
 cxx-compiler = "*"
-cmake        = "*"
-ninja        = "*"
-gtest        = "*"
+cmake = "*"
+ninja = "*"
+gtest = "*"
 
 [feature.tests.tasks]
 test = "cmake -G Ninja -S . -B build/tests -DXTYPES_BUILD_TESTS=ON && cmake --build build/tests && ctest --test-dir build/tests --output-on-failure"
