@@ -20,7 +20,7 @@ license = "Apache-2.0"
 
 [package.build.backend]
 name = "pixi-build-cmake"
-version = "*"
+version = ">=0.4,<0.5"
 
 # Test env builds the library with tests enabled and runs ctest.
 # xtypes is a plain-CMake header-only INTERFACE library (not ament/colcon),
