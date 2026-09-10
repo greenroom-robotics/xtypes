@@ -4,9 +4,8 @@ on:
     inputs:
       package:
         type: choice
-        description: 'If not specified, all packages will be released.'
+        description: 'The package to release.'
         options:
-          - ""
           - xtypes
       build_kilted:
         type: boolean
