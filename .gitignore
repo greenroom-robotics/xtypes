@@ -3,3 +3,4 @@ docs/html
 log
 node_modules
 .releaserc
+.pixi/
