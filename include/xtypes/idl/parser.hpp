@@ -320,7 +320,7 @@ private:
         {
             str.replace(pos, froms, to);
             pos = str.find(from, pos + tos);
-            while (str[pos - 1] == '\\')
+            while (pos != std::string::npos && pos > 0 && str[pos - 1] == '\\')
             {
                 str.replace(pos, froms, escaped);
                 pos = str.find(from, pos + escaped_size);
@@ -739,7 +739,7 @@ private:
         {
             str.replace(pos, froms, to);
             pos = str.find(from, pos + tos);
-            while (str[pos - 1] == '\\')
+            while (pos != std::string::npos && pos > 0 && str[pos - 1] == '\\')
             {
                 str.replace(pos, froms, escaped);
                 pos = str.find(from, pos + escaped_size);
