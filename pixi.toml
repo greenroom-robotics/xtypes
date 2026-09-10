@@ -1,39 +1,32 @@
 [workspace]
+name = "xtypes"
 channels = [
-  "http://localhost:12222/general",
+  "az://stgrcondachannel.blob.core.windows.net/general",
   "https://prefix.dev/robostack-kilted",
-  "https://prefix.dev/pixi-build-backends",
   "https://prefix.dev/conda-forge",
 ]
 platforms = ["linux-64", "linux-aarch64"]
 preview = ["pixi-build"]
 
-[dependencies]
-ros-kilted-desktop = "*"
-xtypes = { path = "." }
-mise = "*"
-
 [package]
-name = "xtypes"
+name    = "xtypes"
 version = "1.1.2"
 license = "Apache-2.0"
 
+[dependencies.xtypes]
+path   = "."
+extras = ["test"]
+
 [package.build.backend]
-name = "pixi-build-cmake"
+name    = "pixi-build-cmake"
 version = "*"
 
-# Test env builds the library with tests enabled and runs ctest.
-# xtypes is a plain-CMake header-only INTERFACE library (not ament/colcon),
-# so this uses cmake/ctest directly rather than the colcon test pattern used
-# by ROS packages. Tests are gated behind XTYPES_BUILD_TESTS and link GTest.
-[feature.tests.dependencies]
+# Plain-CMake header-only library, not ament: tests drive cmake/ctest directly.
+[package.extra-dependencies.test]
 cxx-compiler = "*"
-cmake = "*"
-ninja = "*"
-gtest = "*"
+cmake        = "*"
+ninja        = "*"
+gtest        = "*"
 
-[feature.tests.tasks]
+[tasks]
 test = "cmake -G Ninja -S . -B build/tests -DXTYPES_BUILD_TESTS=ON && cmake --build build/tests && ctest --test-dir build/tests --output-on-failure"
-
-[environments]
-tests = { features = ["tests"], no-default-feature = true }
