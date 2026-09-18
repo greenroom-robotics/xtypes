@@ -40,7 +40,7 @@ if(ENABLE_WER)
     set(WER_TIMEOUT_TIME 10)
 endif()
 
-set(XTYPES_PEGLIB_VERSION "master" CACHE STRING "yhirose/cpp-peglib version to use.")
+set(XTYPES_PEGLIB_VERSION "de57145d884e1eb6ca81b3972b588eb1cf5e643e" CACHE STRING "yhirose/cpp-peglib version to use.")
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

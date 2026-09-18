@@ -264,7 +264,8 @@ public:
             if(!ptr.type_)
                 return;
 
-            new (this) Ptr(*ptr.type_);
+            new (this) Ptr();
+            this->type_ = ptr.type_;
         }
 
         Ptr(Ptr&& ptr) = default;
