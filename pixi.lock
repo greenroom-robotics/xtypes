@@ -61,7 +61,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/libstdcxx-devel_linux-64-15.3.0-hb2c5482_104.conda
       - conda: https://prefix.dev/conda-forge/noarch/sysroot_linux-64-2.28-h4ee821c_9.conda
       - conda: https://prefix.dev/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda
-      - conda_source: xtypes[a370e92d] @ .
+      - conda_source: xtypes[2a926a20] @ .
       linux-aarch64:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/_openmp_mutex-4.5-20_gnu.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/binutils_impl_linux-aarch64-2.46.1-default_h5f4c503_102.conda
@@ -104,7 +104,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/libstdcxx-devel_linux-aarch64-15.3.0-h0e8df58_104.conda
       - conda: https://prefix.dev/conda-forge/noarch/sysroot_linux-aarch64-2.28-h585391f_9.conda
       - conda: https://prefix.dev/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda
-      - conda_source: xtypes[728cb937] @ .
+      - conda_source: xtypes[1374d0da] @ .
 packages:
 - conda: https://prefix.dev/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda
   build_number: 20
@@ -1365,12 +1365,13 @@ packages:
   run_exports: {}
   size: 118849
   timestamp: 1784250406640
-- conda_source: xtypes[728cb937] @ .
+- conda_source: xtypes[1374d0da] @ .
   variants:
     c_stdlib: sysroot
     c_stdlib_version: '2.28'
     target_platform: linux-aarch64
   depends:
+  - gcc
   - libstdcxx >=16
   - libgcc >=16
   - __glibc >=2.28,<3.0.a0
@@ -1426,12 +1427,13 @@ packages:
   - conda: https://prefix.dev/conda-forge/linux-aarch64/libgcc-16.2.0-h205dda4_4.conda
   - conda: https://prefix.dev/conda-forge/linux-aarch64/libgomp-16.2.0-h8acb6b2_4.conda
   - conda: https://prefix.dev/conda-forge/linux-aarch64/libstdcxx-16.2.0-hef695bb_4.conda
-- conda_source: xtypes[a370e92d] @ .
+- conda_source: xtypes[2a926a20] @ .
   variants:
     c_stdlib: sysroot
     c_stdlib_version: '2.28'
     target_platform: linux-64
   depends:
+  - gcc
   - libstdcxx >=16
   - libgcc >=16
   - __glibc >=2.28,<3.0.a0

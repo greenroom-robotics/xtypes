@@ -21,6 +21,10 @@ extras = ["test"]
 name    = "pixi-build-cmake"
 version = "*"
 
+# The IDL parser preprocesses through `cpp`.
+[package.run-dependencies]
+gcc = "*"
+
 # Plain-CMake header-only library, not ament: tests drive cmake/ctest directly.
 [package.extra-dependencies.test]
 cxx-compiler = "*"
